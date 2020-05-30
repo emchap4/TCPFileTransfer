@@ -1,4 +1,4 @@
-# File Transer
+# File Transfer
 
 Send files between computers on the same network using the TCP protocol
 
