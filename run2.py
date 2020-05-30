@@ -11,7 +11,7 @@ class server_thread(threading.Thread, object):
         threading.Thread.__init__(self, target=self.FlaskRunner)
     
     def FlaskRunner(self):
-        app.run()
+        app.run(port="8000")
 
 @app.route('/')
 def home():
