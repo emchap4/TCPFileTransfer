@@ -9,7 +9,7 @@ Send files between computers on the same network using the TCP protocol
 source venv/bin/activate
 ```
 
-NOTE: If you would prefer to install the python3 dependcies instead (or the virtual environment doesn't work for some reason), run the following command:
+NOTE: If you would prefer to install the python3 dependencies instead (or the virtual environment doesn't work for some reason), run the following command:
 ```bash
 pip3 install $(cat pip3depends.txt
 ```
