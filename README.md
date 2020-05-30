@@ -4,14 +4,14 @@ Send files between computers on the same network using the TCP protocol
 
 ## Usage
 
-1. Activate python virtual environment
+1. Create virtual env for project 
 ```bash
-source venv/bin/activate
+python3 -m venv .env && source .env/bin/activate && pip install -r requirements.txt 
 ```
 
-NOTE: If you would prefer to install the python3 dependencies instead (or the virtual environment doesn't work for some reason), run the following command:
+or simply install requirements without venv
 ```bash
-pip3 install $(cat pip3depends.txt)
+pip install -r requirements.txt
 ```
 
 2. Run the program
