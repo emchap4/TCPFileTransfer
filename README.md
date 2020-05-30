@@ -11,7 +11,7 @@ source venv/bin/activate
 
 NOTE: If you would prefer to install the python3 dependencies instead (or the virtual environment doesn't work for some reason), run the following command:
 ```bash
-pip3 install $(cat pip3depends.txt
+pip3 install $(cat pip3depends.txt)
 ```
 
 2. Run the program
