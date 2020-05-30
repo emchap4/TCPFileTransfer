@@ -1,0 +1,22 @@
+File: <input id="fileName"></input>
+<br>
+IP: <input id="ip"></input>
+<br>
+<button onclick="sendFile();" >Send File</button>
+
+
+<script>
+function sendFile(){
+    var fileName = document.getElementById("fileName").value;
+    var ip = document.getElementById("ip").value;
+
+    fetch(`${window.origin}/send/`+fileName+'/'+ip, {
+        method: "POST",
+        credentials: "include",
+        cache: "no-cache",
+        headers: new Headers({
+            "content-type": "application/json"
+        })
+    })
+}
+</script>

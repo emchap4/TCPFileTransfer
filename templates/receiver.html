@@ -1,0 +1,12 @@
+My IP Address: {{ ip }}
+
+Enter name of output file:<input id="fileName"></input>
+<button onclick="listen();">Listen for File</button>
+
+<script>
+function listen(){
+    var fileName = document.getElementById("fileName").value;
+    location.href = `${window.origin}/listening/`+fileName;
+
+}
+</script>
