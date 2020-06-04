@@ -1,8 +1,25 @@
-File: <input id="fileName"></input>
-<br>
-IP: <input id="ip"></input>
-<br>
-<button onclick="sendFile();" >Send File</button>
+{% extends "bootstrap/base.html" %}
+
+{% block title %}TCP File Transfer{% endblock %}
+{% block content %}
+
+
+<form style="margin:50px">
+  <div class="form-group">
+    <label for="fileName">File:</label>
+    <input class="form-control" id="fileName" placeholder="File Name">
+  </div>
+  <div class="form-group">
+    <label for="ip">IP Address of Receiver:</label>
+    <input class="form-control" id="ip" placeholder="0.0.0.0">
+  </div>
+   <div class="form-group row">
+    <div class="col-sm-10">
+      <button onclick="sendFile();" class="btn btn-primary">Send File</button>
+    </div> </div>
+</form>
+
+
 
 
 <script>
@@ -20,3 +37,4 @@ function sendFile(){
     })
 }
 </script>
+{% endblock %}

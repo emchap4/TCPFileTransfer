@@ -1,4 +1,5 @@
 from flask import Flask, render_template, jsonify, make_response
+from flask_bootstrap import Bootstrap
 import webview
 import threading
 
@@ -51,8 +52,10 @@ def on_closed():
     print("Window closed")
 
 if __name__ == "__main__":
-    srvThread = server_thread()
-    srvThread.start()
+    #srvThread = server_thread()
+    #srvThread.start()
+    Bootstrap(app)
+    app.run(debug=True)
 
 #    window = webview.create_window('File Transfer', "http://127.0.0.1:5000")
  #   window.destroy()

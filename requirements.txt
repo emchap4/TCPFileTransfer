@@ -1,2 +1,3 @@
 pywebview
 flask
+flask_bootstrap4

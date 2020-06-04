@@ -1,12 +1,19 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}TCP File Transfer{% endblock %}
+{% block content %}
 My IP Address: {{ ip }}
+<br>
 
 Enter name of output file:<input id="fileName"></input>
 <button onclick="listen();">Listen for File</button>
 
 <script>
 function listen(){
+    //Send 'listening' string to user for confirmation  
     var fileName = document.getElementById("fileName").value;
     location.href = `${window.origin}/listening/`+fileName;
 
 }
 </script>
+{% endblock %}

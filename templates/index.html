@@ -1,3 +1,8 @@
-<button onclick="location.href=`${window.origin}/sender`">Sender</button>
-<br>
-<button onclick="location.href=`${window.origin}/receiver`">Receiver</button>
+{% extends "bootstrap/base.html" %}
+
+{% block title %}TCP File Transfer{% endblock %}
+{% block content %}
+
+<button style="margin:50px" onclick="location.href=`${window.origin}/sender`" type="button" class="btn btn-primary">Sender</button>
+<button style="margin:50px" onclick="location.href=`${window.origin}/receiver`" type="button" class="btn btn-primary">Receiver</button>
+{% endblock %}
