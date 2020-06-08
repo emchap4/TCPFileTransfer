@@ -22,6 +22,10 @@ def home():
 def sender():
     return render_template('sender.html')
 
+#Add HTML file upload button
+'''
+js fetch api route for sending
+'''
 @app.route('/send/<file>/<ip>/<port>', methods=['GET', 'POST'])
 @app.route('/send/<file>/<ip>', methods=['GET', 'POST'])
 def send(file, ip, port=6667):
@@ -45,7 +49,7 @@ def listening(file, port="6667"):
     lis = helper.Listener(port, file)
     lis.run()
     print("File made!")
-    return render_template('lis.html', file=file)
+    return render_template('received.html', file=file)
 
 
 def on_closed():

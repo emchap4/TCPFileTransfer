@@ -2,17 +2,22 @@
 
 {% block title %}TCP File Transfer{% endblock %}
 {% block content %}
-My IP Address: {{ ip }}
+<div style="margin:50px">
+    My IP Address: <strong>{{ ip }}</strong>
 <br>
-
-Enter name of output file:<input id="fileName"></input>
-<button onclick="listen();">Listen for File</button>
+Enter name of output file:
+<input class="form-control" id="fileName"></input>
+<br>
+<button class="btn btn-primary" onclick="listen();">Listen for File</button>
+</div>
 
 <script>
 function listen(){
-    //Send 'listening' string to user for confirmation  
+    //send user to final screen
     var fileName = document.getElementById("fileName").value;
     location.href = `${window.origin}/listening/`+fileName;
+
+    //todo: add 'listening' string to user for confirmation 
 
 }
 </script>

@@ -1,4 +1,5 @@
 from flask import Flask, render_template, jsonify, make_response
+from flask_bootstrap import Bootstrap
 import webview
 import threading
 
@@ -11,7 +12,7 @@ class server_thread(threading.Thread, object):
         threading.Thread.__init__(self, target=self.FlaskRunner)
     
     def FlaskRunner(self):
-        app.run(port="8000")
+        app.run()
 
 @app.route('/')
 def home():
@@ -21,6 +22,10 @@ def home():
 def sender():
     return render_template('sender.html')
 
+#Add HTML file upload button
+'''
+js fetch api route for sending
+'''
 @app.route('/send/<file>/<ip>/<port>', methods=['GET', 'POST'])
 @app.route('/send/<file>/<ip>', methods=['GET', 'POST'])
 def send(file, ip, port=6667):
@@ -44,15 +49,17 @@ def listening(file, port="6667"):
     lis = helper.Listener(port, file)
     lis.run()
     print("File made!")
-    return render_template('lis.html', file=file)
+    return render_template('received.html', file=file)
 
 
 def on_closed():
     print("Window closed")
 
 if __name__ == "__main__":
-    srvThread = server_thread()
-    srvThread.start()
+    #srvThread = server_thread()
+    #srvThread.start()
+    Bootstrap(app)
+    app.run(port=8000, debug=True)
 
 #    window = webview.create_window('File Transfer', "http://127.0.0.1:5000")
  #   window.destroy()

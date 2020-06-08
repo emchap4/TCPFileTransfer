@@ -4,6 +4,7 @@ import os
 
 '''
 TODO: Add metadata send first (establish connection)
+      Add HTML file upload button
 '''
 
 '''
@@ -24,6 +25,7 @@ class Listener:
 
     def run(self):
         #Runs the nc listener 
+        print("Port: "+ self.port + " File: " + self.file)
         os.system("nc -l " + self.port + " > " + self.file)
 
 
@@ -32,6 +34,7 @@ class Sender:
     Creates sender thread
     '''
     def __init__(self, port, file, ip):
+        print("Sender init")
         self.port = port 
         self.ip = ip
         self.file = file
@@ -39,6 +42,7 @@ class Sender:
     def run(self):
         #Runs the nc sender
 #        os.system("cat " + self.file + " | nc " + self.ip + " 6667")
+        print("File: " + self.file + " IP: " + self.ip)
         os.system("cat " + self.file + " | nc " + self.ip + " 6667")
 
 if __name__ == "__main__":
